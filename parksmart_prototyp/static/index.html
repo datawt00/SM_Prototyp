@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ParkSmart · Smart Campus Parking</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="shell">
+<header class="hero">
+  <div class="eyebrow">SMART BUILDINGS &amp; MOBILITY · HOCHSCHUL-PROTOTYP</div>
+  <div class="hero-main"><div><h1>Park<span>Smart</span></h1><p>Reserve today. Park tomorrow.</p></div><div class="car-icon">P</div></div>
+  <p class="subline">Ein reservierter Parkplatz. Ein entspannter Arbeitsbeginn.</p>
+</header>
+<section class="panel booking-panel">
+  <div class="section-heading"><h2>Parkplatz reservieren</h2><span class="pill">Campus A · Parkzone 1</span></div>
+  <div class="controls">
+    <label>Wunschdatum <input type="date" id="selected-date" required></label>
+    <label>Mitarbeiterkürzel <input type="text" id="owner" maxlength="24" placeholder="z. B. PT01" autocapitalize="characters"></label>
+  </div>
+  <div class="summary"><strong id="free-count">—</strong> freie Parkplätze <span>·</span> <strong id="booked-count">—</strong> reserviert</div>
+  <div id="spots" class="spot-grid" aria-live="polite"></div>
+  <p id="message" class="message" role="status" aria-live="polite"></p>
+</section>
+<section class="panel hardware-panel">
+  <div class="section-heading"><h2>LED-Anzeige am Parkplatzmodell</h2><span class="pill" id="hardware-mode">Simulation</span></div>
+  <p>Hier seht ihr die Ampeln für den am Modell angezeigten Tag: <strong id="display-day">—</strong>.</p>
+  <div id="leds" class="led-grid"></div>
+  <p class="help">Rot = reserviert, Grün = frei. Die LEDs zeigen nur den Buchungsstatus, <strong>nicht</strong> die tatsächliche Fahrzeugbelegung.</p>
+</section>
+<section class="panel demo-panel">
+  <div class="section-heading"><h2>Präsentationsmodus</h2><span class="pill warn">Nur für die Demo</span></div>
+  <p>Normalerweise zeigt das Modell heutige Reservierungen. Für die Vorführung könnt ihr den Tag von morgen simulieren.</p>
+  <div class="actions"><button id="preview-button" class="secondary">Gewählten Tag am Modell anzeigen</button><button id="live-button" class="secondary">Auf heutigen Tag umstellen</button><button id="reset-button" class="ghost">Demo-Buchungen löschen</button></div>
+</section>
+<footer>Lehrdemonstrator · Keine Nutzer-Authentifizierung · Nicht für den produktiven Betrieb freigeben</footer>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
